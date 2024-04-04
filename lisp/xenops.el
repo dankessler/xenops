@@ -182,6 +182,7 @@ available in this keymap.")
     (xenops-math-activate)
     (xenops-auctex-activate)
     (xenops-font-lock-activate)
+    (font-lock-update)
     (save-excursion
       (goto-char (point-min))
       (xenops-render-if-cached)))
