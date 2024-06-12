@@ -492,7 +492,7 @@ Since we are in a math element, we strip the delimiters from the copied text bef
 (defun xenops-math-insert-closing-paren ()
   "Insert ). If this closed an inline math element then render it."
   (interactive)
-  (insert ")")
+  (self-insert-command 1 ?\) )
   (xenops-math-look-back-and-render-inline-math))
 
 (defun xenops-math-fill-paragraph-after-advice (&rest _)
