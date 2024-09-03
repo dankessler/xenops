@@ -48,7 +48,8 @@ under some OSs / Mathematica versions.")
 (defun xenops-src-parse-at-point ()
   "Parse 'src element at point."
   (-if-let* ((element (xenops-parse-element-at-point 'src))
-             (org-element (xenops-src-do-in-org-mode (org-element-context)))
+             (org-element (xenops-src-do-in-org-mode
+                           (org-element-resolve-deferred (org-element-context))))
              (org-babel-info (org-babel-get-src-block-info 'light org-element)))
       (xenops-util-plist-update
        element
